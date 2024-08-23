@@ -16,7 +16,8 @@ export class ProductsService {
     private readonly productRepository: Repository<Product>,
   ){}
   
-  async create(createProductDto: CreateProductDto) {
+  async create(createProductDto: CreateProductDto) {    
+
     try {
       const product = this.productRepository.create(createProductDto)
       await this.productRepository.save( product )
