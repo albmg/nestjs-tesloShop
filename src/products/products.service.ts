@@ -28,8 +28,7 @@ export class ProductsService {
       return product;
 
     } catch(error){
-      this.handleDBExceptions(error)
-      
+      this.handleDBExceptions(error)      
     }
   }
   
@@ -81,8 +80,6 @@ export class ProductsService {
       } catch(error) {
         this.handleDBExceptions(error)
       }
-    
-
   }
 
   async remove(id: string) {
