@@ -10,7 +10,7 @@ export class FilesService {
         const path = join( __dirname, '../../static/products', imageName );
                 
         if ( !existsSync(path) )
-            throw new BadRequestException(`No product found with image ${ imageName }`)
+            throw new BadRequestException(`No product found with image ${ imageName }`);
 
         return path;
     }
