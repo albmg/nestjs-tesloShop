@@ -73,7 +73,10 @@ export class Product {
     })
     sizes: string[]
 
-    @ApiProperty()
+    @ApiProperty({
+        example: 'Women',
+        description: 'Product Gender',        
+    })
     @Column('text')
     gender: string
 
