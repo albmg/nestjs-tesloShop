@@ -12,14 +12,11 @@ export class MessagesWsGateway implements OnGatewayConnection, OnGatewayDisconne
 
   ) {}
   handleConnection( client: Socket ) {
+    const token = client.handshake.headers.authentication as string;
+    console.log({ token });
     // console.log('Cliente conectado', client.id )
     this.messagesWsService.registerClient( client )
     // console.log({ conectados: this.messagesWsService.getConnectedClients() })
-
-    client.join('ventas');
-
-    this.wss.to('ventas').emit('');
-
     this.wss.emit('clients-updated', this.messagesWsService.getConnectedClients())
   }
 
